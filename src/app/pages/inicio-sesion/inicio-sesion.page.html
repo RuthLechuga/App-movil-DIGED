@@ -1,0 +1,63 @@
+<app-header-top></app-header-top>
+
+<ion-content>
+
+    <ion-slides class="mainSlide">
+
+        <ion-slide>
+
+            <ion-grid fixed>
+  
+                <ion-row>
+                    <ion-col class="center">
+                        <img src="/assets/usac.png">
+                        <img class="img-diged" src="/assets/diged.png">
+                    </ion-col>
+                </ion-row>
+        
+                <form (ngSubmit)="login(fLogin)" #fLogin="ngForm">
+                    <ion-row>
+                        <ion-col>
+                            
+                            <ion-list>
+                                
+                                <ion-item color="transparent">
+                                <ion-label position="stacked">Correo Electrónico</ion-label>
+                                <ion-input  name="email" 
+                                            type="email"
+                                            [(ngModel)] = "loginUser.email"
+                                            required></ion-input>
+                                </ion-item>
+
+                                <ion-item color="transparent" lines="none"></ion-item>
+        
+                                <ion-item color="transparent">
+                                <ion-label position="stacked">Contraseña</ion-label>
+                                <ion-input  name="password"
+                                            type="password"
+                                            [(ngModel)] = "loginUser.password"
+                                            required></ion-input>
+                                </ion-item>
+        
+                            </ion-list>
+                        </ion-col>
+                    </ion-row>
+                    
+                    <ion-row>
+                    <ion-col>
+                        <ion-button type="submit"
+                                    color="primary"
+                                    shape="round">
+                            Iniciar Sesion
+                        </ion-button>
+                    </ion-col>
+                </ion-row>
+                
+                </form>
+            </ion-grid>
+        
+        </ion-slide>
+    </ion-slides>
+</ion-content>
+
+<app-header-bottom></app-header-bottom>

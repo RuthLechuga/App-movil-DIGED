@@ -1,0 +1,39 @@
+ion-col.center {
+    text-align: center;
+}
+
+img.img-diged {
+    height: 53px;
+    padding-left: 15%;
+}
+
+.mainSlide, .mainSlide{
+    width: 100%;
+    background-image: linear-gradient(to bottom right, white, rgb(162, 233, 233) , white);  
+}
+
+ion-list {
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 100%;
+    background-color: transparent;
+}
+
+ion-item {
+    background-color: transparent;
+}
+
+ion-label {
+    background-color: transparent;
+    font-size: small;
+}
+
+.left{
+    text-align: left;
+    padding-top: 10px;
+}
+
+ion-grid {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}

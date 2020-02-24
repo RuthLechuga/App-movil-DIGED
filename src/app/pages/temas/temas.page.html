@@ -1,0 +1,43 @@
+<app-header-top></app-header-top>
+
+<app-toolbar-usuario [nombre]="nombre_usuario"></app-toolbar-usuario> 
+<ion-slides class="mainSlide">
+  <ion-slide>
+
+    <ion-grid fixed>
+
+      <ion-row>
+          <ion-col class="center">
+              <img src="/assets/usac.png">
+              <img class="img-diged" src="/assets/diged.png">
+          </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col class="left">
+          <ion-label>
+            Curso: {{nombre_curso}}
+          </ion-label>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+      
+  </ion-slide>
+</ion-slides>
+
+<ion-content> 
+  <ion-list>
+    <ion-item *ngFor="let tema of temas"
+              (click)="ver_detalle(tema)">
+
+      <ion-label>
+
+        <h3> {{tema.id}}. {{tema.titulo}}</h3>
+
+      </ion-label>
+
+    </ion-item>
+
+  </ion-list >
+</ion-content>
+
+<app-header-bottom></app-header-bottom>
