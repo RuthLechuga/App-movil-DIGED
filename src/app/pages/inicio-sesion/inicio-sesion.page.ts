@@ -12,8 +12,8 @@ import { Router } from '@angular/router';
 export class InicioSesionPage implements OnInit {
 
   loginUser = {
-    email: '',
-    password: ''
+    nombre: '',
+    apellido: ''
   }
 
   constructor(private service: ServicioService,
@@ -40,12 +40,7 @@ export class InicioSesionPage implements OnInit {
       this.presentToast();
     else
     {
-      const valido = true; //await this.service.login(this.loginUser.email, this.loginUser.password);
-
-      if(valido)
-        this.route.navigate(['/cursos',this.loginUser.email]);
-      else
-        this.presentToast();
+      this.route.navigate(['/cursos',this.loginUser.nombre]);
     }
 
   }

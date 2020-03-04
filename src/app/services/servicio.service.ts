@@ -8,16 +8,6 @@ export class ServicioService {
 
   constructor(private http: HttpClient) { }
 
-  login(email: string, password: string): boolean{
-
-    const data = {email, password};
-
-    /*
-      Escribir petición POST para iniciar sesión
-    */
-    return true;
-  }
-
   getCursos() {}
 
   getTemas(id: number){}
