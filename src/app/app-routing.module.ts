@@ -16,7 +16,7 @@ const routes: Routes = [
     loadChildren: () => import('./pages/temas/temas.module').then( m => m.TemasPageModule)
   },
   {
-    path: 'detalle-tema',
+    path: 'detalle-tema/:nombre/:id_tema/:nombre_curso/:nombre_tema',
     loadChildren: () => import('./pages/detalle-tema/detalle-tema.module').then( m => m.DetalleTemaPageModule)
   },
   {

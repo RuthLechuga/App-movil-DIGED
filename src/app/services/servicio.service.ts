@@ -6,10 +6,28 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ServicioService {
 
-  constructor(private http: HttpClient) { }
+  url_api = "https://desarrollo.virtual.usac.edu.gt/DEDEV/Api";
 
-  getCursos() {}
+  constructor(private httpClient: HttpClient) { }
 
-  getTemas(id: number){}
+  getCursos(){
+    const url = `${this.url_api}/cursos`;
+    return new Promise(resolve => {
+      this.httpClient.get(url)
+      .subscribe(resp => {
+        resolve(resp);
+      });
+    });
+  }
+
+  getTemas(id){
+    const url = `${this.url_api}/temas/${id}`;
+    return new Promise(resolve => {
+      this.httpClient.get(url)
+      .subscribe(resp => {
+        resolve(resp);
+      });
+    });
+  }
 
 }

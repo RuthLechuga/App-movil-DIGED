@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { ServicioService } from 'src/app/services/servicio.service';
 import { ToastController } from '@ionic/angular';
 import { Router } from '@angular/router';
 
@@ -16,8 +15,7 @@ export class InicioSesionPage implements OnInit {
     apellido: ''
   }
 
-  constructor(private service: ServicioService,
-              public toastController: ToastController,
+  constructor(public toastController: ToastController,
               private route: Router) { }
 
   ngOnInit() {
@@ -25,7 +23,7 @@ export class InicioSesionPage implements OnInit {
 
   async presentToast() {
     const toast = await this.toastController.create({
-      message: '¡Datos Erroneos! Intenta nuevamente.',
+      message: '¡Datos Insuficientes! Intenta nuevamente.',
       color: 'danger',
       position: 'bottom',
       duration: 2000

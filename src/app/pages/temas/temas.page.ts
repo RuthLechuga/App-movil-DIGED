@@ -12,39 +12,7 @@ export class TemasPage implements OnInit {
   id_curso = null;
   nombre_curso = '';
   nombre_usuario = '';
-  temas: any[] = [];
-
-  temas_temporal = [
-    {
-      id: 1,
-      titulo: 'Pequenas moleculas inorganicas',
-    },
-    {
-      id: 2,
-      titulo: 'Biomoleculas',
-    },
-    {
-      id: 3,
-      titulo: 'Glucidos o Carbohidratos',
-    },
-    {
-      id: 4,
-      titulo: 'Lipidos',
-    },
-    {
-      id: 5,
-      titulo: 'Aminoacidos',
-    },
-    {
-      id: 6,
-      titulo: 'Proteinas',
-    },
-    {
-      id: 7,
-      titulo: 'Acidos nucleicos',
-    },
-  ]
-  
+  temas: any[] = [];  
 
   constructor(private activeRoute: ActivatedRoute,
               private route: Router,
@@ -54,14 +22,17 @@ export class TemasPage implements OnInit {
     this.nombre_usuario = this.activeRoute.snapshot.paramMap.get('nombre');
     this.id_curso = this.activeRoute.snapshot.paramMap.get('id_curso');
     this.nombre_curso = this.activeRoute.snapshot.paramMap.get('nombre_curso');
-    
-    this.temas = this.temas_temporal;
-    //implementar servicio para obtener temas
+    this.cargarTemas();
+  }
+
+  async cargarTemas(){
+    this.temas = await <any>this.service.getTemas(this.id_curso);
+    console.log(this.temas)
   }
 
   ver_detalle(tema){
     console.log(tema);
-    this.route.navigate(['/detalle-tema']);
+    this.route.navigate(['/detalle-tema',this.nombre_usuario,tema.Cod_Tema,this.nombre_curso,tema.tema]);
   }
 
 }
