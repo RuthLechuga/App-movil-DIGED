@@ -34,7 +34,7 @@
                         'width': width,
                         'height':height
                     }"
-                    (click)="enlazar(coordenada.Id_Titulo)">
+                    (click)="enlazar(coordenada.Id_Titulo,coordenada.Nombre)">
                         {{coordenada.Nombre.substring(0,5)}}
                     </div>
 
@@ -51,7 +51,7 @@
                         'width': radio,
                         'height':radio
                     }"
-                    (click)="enlazar(coordenada.Id_Titulo)">
+                    (click)="enlazar(coordenada.Id_Titulo,coordenada.Nombre)">
                         {{coordenada.Nombre.substring(0,5)}}
                     </div>
                 </div>
@@ -61,7 +61,7 @@
         <ion-row>
             <ion-list>
                 <ion-item *ngFor="let coordenada of coordenadas; let i = index"
-                          (click)="enlazar(coordenada.Id_Titulo)">
+                          (click)="enlazar(coordenada.Id_Titulo,coordenada.Nombre)">
             
                   <ion-label>
                     <h3> {{i+1}}. {{coordenada.Nombre}}</h3>

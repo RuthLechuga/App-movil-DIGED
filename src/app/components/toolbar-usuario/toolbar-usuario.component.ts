@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-toolbar-usuario',
@@ -9,8 +10,12 @@ export class ToolbarUsuarioComponent implements OnInit {
 
   @Input() nombre: string;
 
-  constructor() { }
+  constructor(private route: Router) { }
 
   ngOnInit() {}
+
+  salir(){
+    this.route.navigate(['/inicio-sesion']);
+  }
 
 }

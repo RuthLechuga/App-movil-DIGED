@@ -59,8 +59,9 @@ export class DetalleTemaPage implements OnInit {
     this.width_screen = +localStorage.getItem('width_screen')
   }
 
-  enlazar(id_titulo){
+  enlazar(id_titulo,nombre_titulo){
     console.log(id_titulo);
+    this.route.navigate(['/contenido',this.nombre_usuario,id_titulo,this.nombre_curso,this.nombre_tema,nombre_titulo]);
   }
 
   getDimensionesRect(coordenada){
