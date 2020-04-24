@@ -26,12 +26,12 @@
 
 <ion-content> 
   <ion-list>
-    <ion-item *ngFor="let tema of temas"
+    <ion-item *ngFor="let tema of temas; let i = index "
               (click)="ver_detalle(tema)">
 
       <ion-label>
 
-        <h3> {{tema.Cod_Tema}}. {{tema.tema}}</h3>
+        <h3> {{i+1}}. {{tema.tema}}</h3>
 
       </ion-label>
 

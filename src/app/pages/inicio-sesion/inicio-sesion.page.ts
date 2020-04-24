@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ToastController } from '@ionic/angular';
 import { Router } from '@angular/router';
+import { Platform } from '@ionic/angular';
 
 @Component({
   selector: 'app-inicio-sesion',
@@ -16,9 +17,13 @@ export class InicioSesionPage implements OnInit {
   }
 
   constructor(public toastController: ToastController,
-              private route: Router) { }
+              private route: Router,
+              public platform: Platform) { }
 
   ngOnInit() {
+    this.platform.ready().then((readySource) => {
+      localStorage.setItem('width_screen',this.platform.width());
+    });
   }
 
   async presentToast() {

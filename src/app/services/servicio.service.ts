@@ -30,4 +30,14 @@ export class ServicioService {
     });
   }
 
+  getDetalleTema(id_tema){
+    const url = `${this.url_api}/img/${id_tema}`;
+    return new Promise(resolve => {
+      this.httpClient.get(url)
+      .subscribe(resp => {
+        resolve(resp);
+      })
+    })
+  }
+
 }

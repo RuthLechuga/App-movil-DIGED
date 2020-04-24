@@ -20,7 +20,7 @@ const routes: Routes = [
     loadChildren: () => import('./pages/detalle-tema/detalle-tema.module').then( m => m.DetalleTemaPageModule)
   },
   {
-    path: 'contenido',
+    path: 'contenido/:nombre/:id_titulo/:nombre_curso/:nombre_tema/:nombre_titulo',
     loadChildren: () => import('./pages/contenido/contenido.module').then( m => m.ContenidoPageModule)
   },
   {
