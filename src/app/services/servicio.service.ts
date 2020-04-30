@@ -40,4 +40,14 @@ export class ServicioService {
     })
   }
 
+  getContenido(id_titulo){
+    const url = `${this.url_api}/titulo/${id_titulo}`;
+    return new Promise(resolve => {
+      this.httpClient.get(url)
+      .subscribe(resp => {
+        resolve(resp);
+      })
+    })
+  }
+
 }

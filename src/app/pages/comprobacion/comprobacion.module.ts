@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { ComprobacionPageRoutingModule } from './comprobacion-routing.module';
 
 import { ComprobacionPage } from './comprobacion.page';
+import { ComponentsModule } from 'src/app/components/components.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ComprobacionPageRoutingModule
+    ComprobacionPageRoutingModule,
+    ComponentsModule
   ],
   declarations: [ComprobacionPage]
 })

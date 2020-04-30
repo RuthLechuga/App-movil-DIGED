@@ -24,7 +24,7 @@ const routes: Routes = [
     loadChildren: () => import('./pages/contenido/contenido.module').then( m => m.ContenidoPageModule)
   },
   {
-    path: 'comprobacion',
+    path: 'comprobacion/:nombre/:id_titulo/:nombre_curso/:nombre_tema/:nombre_titulo',
     loadChildren: () => import('./pages/comprobacion/comprobacion.module').then( m => m.ComprobacionPageModule)
   },
   {

@@ -26,8 +26,12 @@
       </ion-row>
     </ion-grid>
 
+    <div>        
+        <div [innerHTML]="contenido | safeHtml"></div>
+    </div>
+
 </ion-content>
-  
+<ion-button expand="block" color="secondary" (click)="comprobacion()">Comprobación de Lectura</ion-button>  
 <app-header-bottom></app-header-bottom>
 
 
