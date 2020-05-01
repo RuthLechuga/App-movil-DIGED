@@ -14,7 +14,7 @@ export class DetalleTemaPage implements OnInit {
   nombre_usuario = '';
   nombre_tema = '';  
   image = null;
-  coordenadas;
+  coordenadas = [];
   width_screen: number;
   height_screen: number;
   width_image: number;
@@ -24,6 +24,10 @@ export class DetalleTemaPage implements OnInit {
   width: string;
   height: string;
   radio: string;
+
+  colors = ['red','blue','green','yellow','purple','orange','pink','salmon','black'];
+  t_color: number = 0;
+  actual_color = '';
 
   constructor(private activeRoute: ActivatedRoute,
               private route: Router,
@@ -62,6 +66,7 @@ export class DetalleTemaPage implements OnInit {
   enlazar(id_titulo,nombre_titulo){
     console.log(id_titulo);
     this.route.navigate(['/contenido',this.nombre_usuario,id_titulo,this.nombre_curso,this.nombre_tema,nombre_titulo]);
+    return;
   }
 
   getDimensionesRect(coordenada){
@@ -72,6 +77,8 @@ export class DetalleTemaPage implements OnInit {
       this.top = (coordenadasRect[1]/this.proporcion).toFixed()+"px";
       this.width = (<number><unknown>(coordenadasRect[2] / this.proporcion).toFixed()-<number><unknown>(coordenadasRect[0] / this.proporcion).toFixed())+"px";
       this.height = (<number><unknown>(coordenadasRect[3] / this.proporcion).toFixed()-<number><unknown>(coordenadasRect[1] / this.proporcion).toFixed())+"px";
+      this.selectColor();
+
       return true;  
     }
     return false;
@@ -84,9 +91,21 @@ export class DetalleTemaPage implements OnInit {
       this.radio = ((coordenadasCircle[2]/this.proporcion)*2).toFixed()+"px";
       this.left = (<number><unknown>(coordenadasCircle[0] / this.proporcion).toFixed()-<number><unknown>(coordenadasCircle[2] / this.proporcion).toFixed())+"px";
       this.top = (<number><unknown>(coordenadasCircle[1] / this.proporcion).toFixed()-<number><unknown>(coordenadasCircle[2] / this.proporcion).toFixed())+"px";
-      
+      this.selectColor();
+
       return true;  
     }
     return false;
   }
+
+  selectColor(){
+    this.actual_color = this.colors[this.t_color];
+    this.t_color = this.t_color +1;
+
+    if(this.t_color==this.colors.length || this.t_color==this.coordenadas.length)
+      this.t_color = 0;
+  
+    return true;
+  }
+
 }
