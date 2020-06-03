@@ -50,4 +50,14 @@ export class ServicioService {
     })
   }
 
+  getComprobacion(id_titulo){
+    const url = `${this.url_api}/comprobacion/${id_titulo}`;
+    return new Promise(resolve => {
+      this.httpClient.get(url)
+      .subscribe(resp => {
+        resolve(resp);
+      })
+    })
+  }
+
 }

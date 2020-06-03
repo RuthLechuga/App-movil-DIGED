@@ -40,8 +40,10 @@ export class DetalleTemaPage implements OnInit {
   async cargarDetalle(){
     this.id_tema = this.activeRoute.snapshot.paramMap.get('id_tema');
     let datos = await <any>this.service.getDetalleTema(this.id_tema);
-
-    if(datos.Imagen){
+    
+    if(!datos.coordenadas[0]){}
+    
+    else if(datos.Imagen){
       this.image = "data:image/jpeg;base64,"+datos.Imagen;
       const image = new Image();
       image.src = this.image;
@@ -51,6 +53,8 @@ export class DetalleTemaPage implements OnInit {
       }
       this.coordenadas = datos.coordenadas[0];
       console.log(this.coordenadas);
+      console.log(image.width);
+      console.log(image.height);
     }
     else{
       this.coordenadas = datos.coordenadas[0];
