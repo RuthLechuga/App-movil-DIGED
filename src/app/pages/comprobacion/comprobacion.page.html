@@ -70,7 +70,7 @@
                             <ion-list>
                                 <ion-item *ngFor="let respuesta of pregunta.respuestas">
                                     <ion-checkbox color="warning" slot="start" (click)="respuesta_multiple(pregunta.id,respuesta.answer)"></ion-checkbox>
-                                    <ion-label>{{respuesta.answer}}</ion-label>
+                                    <ion-label class="ion-text-wrap" style="text-align: justify;text-justify: inter-word;">{{respuesta.answer}}</ion-label>
                                 </ion-item>
                             </ion-list>
                         </ion-item>
